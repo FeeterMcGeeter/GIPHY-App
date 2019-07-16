@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin:400,700&display=swap');
+
+html {
+    background: url(../images/foodbackground.jpeg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ===== HEADER ===== */
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 20px 0 40px 0;
+}
+
+.header-text {
+    position: relative;
+    z-index: 1;
+    outline: 6px solid #000;
+    outline-offset: 8px;
+}
+
+.header-text::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.4;
+}
+
+#header h1 {
+    font-size: 50px;
+    font-family: 'Abril Fatface', cursive;
+    color: #fff;
+    /* text-shadow: 0 0 0 #fff; */
+    padding: 10px;
+}
+
+/* ===== CREATED BUTTONS SECTION ===== */
+#food-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+#food-buttons .food-item {
+    padding: 5px;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#food-buttons:hover {
+    cursor: pointer;
+}
+
+/* ===== GIF & FORM CONTAINER ===== */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 20px 10px;
+}
+
+/* ===== FORM SECTION ===== */
+#food-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100px;
+    padding: 10px 10px 0 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#food-form::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.4;
+}
+
+#food-form label {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#food-input {
+    outline: none;
+    margin-bottom: 10px;
+    height: 20px;
+    font-size: 16px;
+    font-family: 'Cabin', sans-serif;
+}
+
+#add-food {
+    width: 70px;
+    height: 25px;
+    background: #fff;
+    font-size: 14px;
+    font-family: 'Cabin', sans-serif;
+}
+    
+#add-food:hover {
+    cursor: pointer;
+}
+
+/* ===== GIF SECTION ===== */
+#food-gif {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.new-item {
+    margin: 0 10px 10px 0;
+}
+
+.new-item p {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+    padding-bottom: 5px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.new-item p::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.4;
+}
