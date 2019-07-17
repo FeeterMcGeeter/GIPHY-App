@@ -1,12 +1,13 @@
 // CREATE THE ARRAY FOR THE BUTTONS TO BE DISPLAYED ON PAGE LOAD
-// CREATE THE FORM FOR THE USER TO REQUEST GIFs AND ADD IT TO A BUTTON
 // ASK THE API FOR TEN GIFs WHEN A BUTTON IS CLICKED
+// CREATE THE FORM FOR THE USER TO REQUEST GIFs AND ADD IT TO A BUTTON
 // DISPLAY THOSE GIFs IN A DIV AND REMOVE THE PREVIOUS TEN 
+// CHANGE THE STATE OF THE GIF WHEN CLICKED
 
 // ========== ARRAY FOR THE ORIGINAL TEN BUTTONS ==========
 var topics = ["Burgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles", 
-"Soup", "Cereal", "Steak", "Chicken", "Lamb", 
-"Chocolate", "Pork", "Beans", "Ice Cream", "Cake",
+"Soup", "Cereal", "Steak", "Chicken", "Lamb Chops", 
+"Chocolate", "Bacon", "Beans", "Ice Cream", "Cake",
 "Pie", "Cookies", "Lettuce", "Tomatoes", "Bananas"];
 
 // ========== START PAGE LOAD ==========
@@ -17,7 +18,7 @@ $(document).ready(function() {
     // ========== FUNCTION FOR DISPLAYING BUTTONS ==========
     function renderButtons() {
 
-        // Clears out the current gifs displayed
+        // Keeps the buttons from repeating
         $("#food-buttons").empty();
         
         // DOM Manipulation for the buttons 
@@ -51,6 +52,7 @@ $(document).ready(function() {
     
         var food = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + food + "&api_key=qLz4BS0h7ZXsh5Lq9ntDAp7gGYCENIDA";
+
         $("#food-gif").empty();
 
         $.ajax({
@@ -60,6 +62,7 @@ $(document).ready(function() {
             console.log(response);
 
             var results = response.data;
+
             for (var i = 0; i < 10; i++) {     
                 var image = $("<img>");
                 image.attr("src", results[i].images.fixed_height_still.url);
@@ -83,6 +86,7 @@ $(document).ready(function() {
     // ========== CLICK HANDLER FOR CHANGING THE STATE OF THE GIF ==========
     $("#food-gif").on("click", ".food-image", function() {
         var state = $(this).attr("data-state");
+
         if (state === "still") {
             $(this).attr("src", $(this).attr("data-animation"));
             $(this).attr("data-state", "animation");
