@@ -57,6 +57,7 @@ html {
     cursor: pointer;
     border: none;
     border-radius: 2px;
+    background: #fff;
     font-size: 14px;
     font-family: 'Cabin', sans-serif;
     outline: none;
