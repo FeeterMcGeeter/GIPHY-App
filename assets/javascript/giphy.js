@@ -6,7 +6,7 @@
 
 // ========== ARRAY FOR THE ORIGINAL TEN BUTTONS ==========
 var topics = ["Burgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles", 
-"Soup", "Cereal", "Steak", "Chicken", "Lamb Chops", 
+"Soup", "Cereal", "Steak", "Chicken", "Lamb", 
 "Chocolate", "Bacon", "Beans", "Ice Cream", "Cake",
 "Pie", "Cookies", "Lettuce", "Tomatoes", "Bananas"];
 
