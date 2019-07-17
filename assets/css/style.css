@@ -113,6 +113,7 @@ html {
     height: 20px;
     font-size: 16px;
     font-family: 'Cabin', sans-serif;
+    border: none;
 }
 
 ::-webkit-input-placeholder {
@@ -137,6 +138,7 @@ html {
     background: #fff;
     font-size: 16px;
     font-family: 'Cabin', sans-serif;
+    border: none;
 }
     
 #add-food:hover {
@@ -234,5 +236,9 @@ html {
     #header h1 {
         font-size: 30px;
         text-align: center;
+    }
+
+    #add-food {
+        width: 85px;
     }
 }

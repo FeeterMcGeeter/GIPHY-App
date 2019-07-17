@@ -37,7 +37,7 @@ $(document).ready(function() {
         event.preventDefault();
         var foodData = $("#food-input").val().trim();
         
-        if (foodData != "") {
+        if (foodData !== "") {
             topics.push(foodData);
             renderButtons();
             $("#food-input").val();
@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
 
     // ========== CLICK HANDLER FOR DISPLAYING THE GIFs WHEN A BUTTON IS PRESSED ==========
-    $(document).on("click", "button", displayFood);
+    $(document).on("click", ".food-item", displayFood);
 
     // ========== FUNCTION FOR DISPLAYING GIFs ==========
     function displayFood() {
