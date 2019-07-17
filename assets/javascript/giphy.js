@@ -4,7 +4,7 @@
 // DISPLAY THOSE GIFs IN A DIV AND REMOVE THE PREVIOUS TEN 
 
 // ========== ARRAY FOR THE ORIGINAL TEN BUTTONS ==========
-var topics = ["Hamburgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles", 
+var topics = ["Burgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles", 
 "Soup", "Cereal", "Steak", "Chicken", "Lamb", 
 "Chocolate", "Pork", "Beans", "Ice Cream", "Cake",
 "Pie", "Cookies", "Lettuce", "Tomatoes", "Bananas"];
@@ -35,19 +35,20 @@ $(document).ready(function() {
     $("#add-food").on("click", function(event) {
         event.preventDefault();
         var foodData = $("#food-input").val().trim();
+        
         if (foodData != "") {
             topics.push(foodData);
             renderButtons();
-            $("#food-input").val(" ");
+            $("#food-input").val();
         }
     });
 
-
+    // ========== CLICK HANDLER FOR DISPLAYING THE GIFs WHEN A BUTTON IS PRESSED ==========
     $(document).on("click", "button", displayFood);
 
     // ========== FUNCTION FOR DISPLAYING GIFs ==========
     function displayFood() {
-
+    
         var food = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + food + "&api_key=qLz4BS0h7ZXsh5Lq9ntDAp7gGYCENIDA";
         $("#food-gif").empty();
@@ -79,6 +80,7 @@ $(document).ready(function() {
         })
     };
 
+    // ========== CLICK HANDLER FOR CHANGING THE STATE OF THE GIF ==========
     $("#food-gif").on("click", ".food-image", function() {
         var state = $(this).attr("data-state");
         if (state === "still") {
