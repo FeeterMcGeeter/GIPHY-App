@@ -55,15 +55,19 @@ $(document).ready(function() {
 
         $("#food-gif").empty();
 
+
+        // AJAX call to the API
         $.ajax({
             url: queryURL,
             method: "GET"
         }).done(function(response) {
             console.log(response);
 
+            // Setting the data retrieved from the API to a variable 
             var results = response.data;
 
-            for (var i = 0; i < 10; i++) {     
+            for (var i = 0; i < 10; i++) {    
+                // Adding the data-still/animation attribute to the GIFs 
                 var image = $("<img>");
                 image.attr("src", results[i].images.fixed_height_still.url);
                 image.attr("data-still", results[i].images.fixed_height_still.url)
@@ -71,12 +75,19 @@ $(document).ready(function() {
                 image.addClass("food-image");
                 image.attr("data-state", "still");
                 
+                // Adding additional metadata to each GIF
                 var newDiv = $('<div class="new-item">');
                 var rating = results[i].rating;
                 var gifRating = $("<p>").text("Rating: " + rating);
+                var title = results[i].title;
+                var gifTitle = $("<p>").text("Title: " + title);
+                var importDate = results[i].import_datetime;
+                var gifImportDate = $("<p>").text("Date/Time Imported: " + importDate);
                 
                 newDiv.append(gifRating);
-                newDiv.append(image);
+                newDiv.append(gifTitle);
+                newDiv.append(gifImportDate);
+                newDiv.prepend(image);
     
                 $("#food-gif").prepend(newDiv);
             }

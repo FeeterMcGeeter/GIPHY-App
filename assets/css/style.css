@@ -139,10 +139,15 @@ html {
     font-size: 16px;
     font-family: 'Cabin', sans-serif;
     border: none;
+    outline: none;
 }
     
 #add-food:hover {
     cursor: pointer;
+}
+
+#add-food:active {
+    transform: translateY(2px);
 }
 
 /* ===== GIF SECTION ===== */
