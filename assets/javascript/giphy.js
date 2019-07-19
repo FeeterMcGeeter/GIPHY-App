@@ -37,11 +37,18 @@ $(document).ready(function() {
         event.preventDefault();
         var foodData = $("#food-input").val().trim();
         
-        if (foodData !== "") {
-            topics.push(foodData);
-            renderButtons();
-            $("#food-input").val();
+        // Prevents an empty button
+        if (foodData.length === 0) {
+            return;
         }
+        // Displays alert if user requests a food button that is already created
+        if (topics.includes(foodData)) {
+            alert("BUTTON ALREADY CREATED");
+            return;
+        }
+        
+        topics.push(foodData);
+        renderButtons();
     });
 
     // ========== CLICK HANDLER FOR DISPLAYING THE GIFs WHEN A BUTTON IS PRESSED ==========
@@ -81,12 +88,9 @@ $(document).ready(function() {
                 var gifRating = $("<p>").text("Rating: " + rating);
                 var title = results[i].title;
                 var gifTitle = $("<p>").text("Title: " + title);
-                var importDate = results[i].import_datetime;
-                var gifImportDate = $("<p>").text("Date/Time Imported: " + importDate);
                 
                 newDiv.append(gifRating);
                 newDiv.append(gifTitle);
-                newDiv.append(gifImportDate);
                 newDiv.prepend(image);
     
                 $("#food-gif").prepend(newDiv);
