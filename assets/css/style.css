@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Cabin:400,700&display=swap");
 
 html {
     background: url(../images/foodbackground.jpeg) no-repeat center center fixed;
@@ -35,7 +35,7 @@ html {
 
 #header h1 {
     font-size: 50px;
-    font-family: 'Abril Fatface', cursive;
+    font-family: "Abril Fatface", cursive;
     color: #fff;
     padding: 10px;
 }
@@ -60,7 +60,7 @@ html {
     background: #fff;
     line-height: 1;
     font-size: 14px;
-    font-family: 'Cabin', sans-serif;
+    font-family: "Cabin", sans-serif;
     outline: none;
 }
 
@@ -105,7 +105,7 @@ html {
 #food-form label {
     color: #fff;
     font-size: 20px;
-    font-family: 'Cabin', sans-serif;
+    font-family: "Cabin", sans-serif;
 }
 
 #food-input {
@@ -113,36 +113,38 @@ html {
     margin: 10px 0;
     height: 20px;
     font-size: 16px;
-    font-family: 'Cabin', sans-serif;
+    font-family: "Cabin", sans-serif;
     border: none;
 }
 
 ::-webkit-input-placeholder {
-    color:#fff;
+    color: #fff;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-    color:#fff;
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-    color:#fff;
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
 }
 
-:-ms-input-placeholder {  
-    color:#fff;
-}   
+:-ms-input-placeholder {
+    color: #fff;
+}
 
 #add-food {
     width: 70px;
     height: 25px;
     background: #fff;
     font-size: 16px;
-    font-family: 'Cabin', sans-serif;
+    font-family: "Cabin", sans-serif;
     border: none;
     outline: none;
 }
-    
+
 #add-food:hover {
     cursor: pointer;
 }
@@ -171,7 +173,7 @@ html {
 .new-item p {
     color: #fff;
     font-size: 18px;
-    font-family: 'Cabin', sans-serif;
+    font-family: "Cabin", sans-serif;
     padding: 5px 0;
     text-align: center;
     position: relative;
@@ -191,22 +193,21 @@ html {
 }
 
 #add-favorite {
-	box-shadow: inset 0px 1px 0px 0px #ffffff;
-	background-color :#ffffff;
-	border-radius: 2px;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #ffffff;
+    border-radius: 2px;
     border: 1px solid #dcdcdc;
     display: inline-block;
-	cursor: pointer;
-	color: #666666;
-	font-family: 'Cabin', sans-serif;
-	font-size: 15px;
-	padding: 6px 24px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
+    cursor: pointer;
+    color: #666666;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
 }
 
 @media screen and (max-width: 850px) {
-
     .container {
         flex-direction: column;
     }
@@ -239,30 +240,29 @@ html {
     }
 
     ::-webkit-input-placeholder {
-        color:#000;
+        color: #000;
         opacity: 0.5;
     }
-    
-    :-moz-placeholder { /* Firefox 18- */
-        color:#000;
-        opacity: 0.5;
-    }
-    
-    ::-moz-placeholder {  /* Firefox 19+ */
-        color:#000;
-        opacity: 0.5;
-    }
-    
-    :-ms-input-placeholder {  
-        color:#000;
-        opacity: 0.5;
-    }   
 
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: #000;
+        opacity: 0.5;
+    }
 
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #000;
+        opacity: 0.5;
+    }
+
+    :-ms-input-placeholder {
+        color: #000;
+        opacity: 0.5;
+    }
 }
 
 @media screen and (max-width: 475px) {
-
     .header-text {
         width: 90%;
     }

@@ -5,13 +5,13 @@
 // CHANGE THE STATE OF THE GIF WHEN CLICKED
 
 // ========== ARRAY FOR THE ORIGINAL TEN BUTTONS ==========
-var topics = ["Burgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles", 
-"Soup", "Cereal", "Steak", "Chicken", "Lamb", 
-"Chocolate", "Bacon", "Beans", "Ice Cream", "Cake",
-"Pie", "Cookies", "Lettuce", "Tomatoes", "Bananas"];
+var topics = ["Burgers", "Hot Dogs", "Sausage", "Pancakes", "Waffles",
+    "Soup", "Cereal", "Steak", "Chicken", "Lamb",
+    "Chocolate", "Bacon", "Beans", "Ice Cream", "Cake",
+    "Pie", "Cookies", "Lettuce", "Tomatoes", "Bananas"];
 
 // ========== START PAGE LOAD ==========
-$(document).ready(function() {
+$(document).ready(function () {
 
     renderButtons();
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
         // Keeps the buttons from repeating
         $("#food-buttons").empty();
-        
+
         // DOM Manipulation for the buttons 
         for (var i = 0; i < topics.length; i++) {
 
@@ -33,10 +33,10 @@ $(document).ready(function() {
     }
 
     // ========== CLICK HANDLER FOR ADDING BUTTONS ==========
-    $("#add-food").on("click", function(event) {
+    $("#add-food").on("click", function (event) {
         event.preventDefault();
         var foodData = $("#food-input").val().trim();
-        
+
         // Prevents an empty button
         if (foodData.length === 0) {
             return;
@@ -46,7 +46,7 @@ $(document).ready(function() {
             alert("BUTTON ALREADY CREATED");
             return;
         }
-        
+
         topics.push(foodData);
         renderButtons();
     });
@@ -56,9 +56,9 @@ $(document).ready(function() {
 
     // ========== FUNCTION FOR DISPLAYING GIFs ==========
     function displayFood() {
-    
+
         var food = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q="  + food + "&api_key=qLz4BS0h7ZXsh5Lq9ntDAp7gGYCENIDA";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + food + "&api_key=qLz4BS0h7ZXsh5Lq9ntDAp7gGYCENIDA";
 
         $("#food-gif").empty();
 
@@ -67,13 +67,13 @@ $(document).ready(function() {
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).done(function(response) {
+        }).done(function (response) {
             console.log(response);
 
             // Setting the data retrieved from the API to a variable 
             var results = response.data;
 
-            for (var i = 0; i < 10; i++) {    
+            for (var i = 0; i < 10; i++) {
                 // Adding the data-still/animation attribute to the GIFs 
                 var image = $("<img>");
                 image.attr("src", results[i].images.fixed_height_still.url);
@@ -81,25 +81,25 @@ $(document).ready(function() {
                 image.attr("data-animation", results[i].images.fixed_height.url)
                 image.addClass("food-image");
                 image.attr("data-state", "still");
-                
+
                 // Adding additional metadata to each GIF
                 var newDiv = $('<div class="new-item">');
                 var rating = results[i].rating;
                 var gifRating = $("<p>").text("Rating: " + rating);
                 var title = results[i].title;
                 var gifTitle = $("<p>").text("Title: " + title);
-                
+
                 newDiv.append(gifRating);
                 newDiv.append(gifTitle);
                 newDiv.prepend(image);
-    
+
                 $("#food-gif").prepend(newDiv);
             }
         })
     };
 
     // ========== CLICK HANDLER FOR CHANGING THE STATE OF THE GIF ==========
-    $("#food-gif").on("click", ".food-image", function() {
+    $("#food-gif").on("click", ".food-image", function () {
         var state = $(this).attr("data-state");
 
         if (state === "still") {
@@ -114,11 +114,11 @@ $(document).ready(function() {
 
 
 
-    
 
-        
 
-       
+
+
+
 
 
 
